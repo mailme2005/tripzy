@@ -1,91 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tripzy Support</title>
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #0073e6;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-    }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
-      background: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h2 {
-      color: #0073e6;
-      margin-top: 1.5em;
-    }
-    a {
-      color: #0073e6;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      margin-top: 40px;
-      padding: 10px;
-      text-align: center;
-      font-size: 0.9em;
-      background: #f0f0f0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripzy Support Center</title>
+    <style>
+        :root {
+            --primary: #007AFF;
+            --secondary: #5856D6;
+            --bg: #F2F2F7;
+            --card-bg: #FFFFFF;
+            --text: #1C1C1E;
+            --text-secondary: #8E8E93;
+            --divider: #E5E5EA;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            color: var(--text);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        /* App Selection Tabs */
+        .app-section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .app-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--divider);
+            padding-bottom: 15px;
+        }
+
+        .app-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .badge {
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-new {
+            background-color: #E8F2FF;
+            color: var(--primary);
+        }
+
+        .badge-classic {
+            background-color: #F2F2F7;
+            color: var(--text-secondary);
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin-top: 20px;
+            color: var(--text);
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+        }
+
+        .question {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        /* Distinct color for Classic app questions to avoid confusion */
+        .classic-section .question {
+            color: var(--secondary);
+        }
+
+        .answer {
+            color: #3A3A3C;
+            font-size: 0.95rem;
+        }
+
+        .contact-box {
+            text-align: center;
+            background: #E8F2FF;
+            padding: 25px;
+            border-radius: 16px;
+            margin-top: 40px;
+        }
+
+        .contact-box h2 {
+            font-size: 1.1rem;
+            border-bottom: none;
+            margin-bottom: 8px;
+            padding-bottom: 0;
+        }
+
+        .contact-box p {
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .contact-email {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            padding-bottom: 40px;
+        }
+
+        footer a {
+            color: var(--text-secondary);
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--primary);
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Tripzy Support</h1>
-    <p>Your AI-powered travel companion</p>
-  </header>
 
-  <div class="container">
-    <h2>📱 About Tripzy</h2>
-    <p>Tripzy helps you plan smarter trips with AI-powered itineraries, weather-aware packing lists, and personalized travel insights.</p>
+    <div class="container">
+        <header>
+            <h1>Tripzy Support Center</h1>
+            <div class="subtitle">Help & FAQs for all Tripzy apps</div>
+        </header>
 
-    <h2>❓ Frequently Asked Questions</h2>
-    <p><strong>Q: How do I create my first trip?</strong><br/>
-       A: Open Tripzy, select <em>Plan a Trip</em>, enter your destination, dates, and traveler type. Tripzy will generate a personalized itinerary.</p>
+        <!-- APP 1: TRIPZY 3 (LATEST) -->
+        <div class="app-section">
+            <div class="app-header">
+                <div class="app-title">Tripzy 3: Beyond Boundaries</div>
+                <span class="badge badge-new">Latest Version</span>
+            </div>
+            <p>The all-new AI travel companion featuring advanced Gemini intelligence, iPad support, and a flexible credit system.</p>
 
-    <p><strong>Q: What is the difference between AI Trip Planner and Concierge Planner?</strong><br/>
-       A: AI Trip Planner provides instant itineraries. Concierge Planner offers deeper customization and enhanced travel insights.</p>
+            <h3>Frequently Asked Questions</h3>
+            
+            <div class="faq-item">
+                <div class="question">How do credits work in Tripzy 3?</div>
+                <div class="answer">Tripzy 3 uses a simple "Pay as you go" credit system. Generating a full customized itinerary costs <strong>1 Credit</strong>. There are no monthly subscriptions—you simply buy credit packs (3, 10, or 20) whenever you need them.</div>
+            </div>
 
-    <p><strong>Q: How do I upgrade to Pro or Concierge?</strong><br/>
-       A: Go to the <em>Profile</em> tab in the app and select <em>Upgrade</em> to choose your subscription.</p>
+            <div class="faq-item">
+                <div class="question">I was a subscriber to the original Tripzy. Do I get Tripzy 3 for free?</div>
+                <div class="answer">Tripzy 3 is a completely new app built from the ground up. However, as a thank you to our loyal users, new accounts may receive complimentary starter credits to explore the new features.</div>
+            </div>
 
-    <p><strong>Q: Why is my free usage limited?</strong><br/>
-       A: Free users can generate up to 3 itineraries per month, max 5 days per trip. Upgrade to unlock longer trips and unlimited usage.</p>
+            <div class="faq-item">
+                <div class="question">Can I use Tripzy 3 on my iPad?</div>
+                <div class="answer">Yes! Tripzy 3 is fully optimized for iPad, offering a beautiful split-screen experience and full-screen map planning.</div>
+            </div>
+        </div>
 
-    <h2>📧 Contact Support</h2>
-    <p>If you need additional help, please email us at:  
-       <a href="mailto:tripzy.support@mail.com">tripzy.support@mail.com</a></p>
+        <!-- APP 2: TRIPZY CLASSIC -->
+        <div class="app-section classic-section">
+            <div class="app-header">
+                <div class="app-title">Tripzy (Original)</div>
+                <span class="badge badge-classic">Legacy Version</span>
+            </div>
+            <p>The original subscription-based travel planner.</p>
 
-    <h2>🔒 Privacy & Terms</h2>
-    <ul>
-      <li><a href="https://mailme2005.github.io/privacy" target="_blank">Privacy Policy</a></li>
-      <li><a href="https://mailme2005.github.io/terms" target="_blank">Terms of Use</a></li>
-    </ul>
-  </div>
+            <h3>Frequently Asked Questions</h3>
 
-  <footer>
-    <p>© 2025 Tripzy. All rights reserved.</p>
-  </footer>
+            <div class="faq-item">
+                <div class="question">How do I create my first trip?</div>
+                <div class="answer">Open the app, go to Plan, enter your destination, dates, and traveler type. Tripzy will instantly generate a personalized itinerary.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">What’s the difference between AI Trip Planner and Concierge Planner?</div>
+                <div class="answer">AI Trip Planner provides quick, day-by-day itineraries. Concierge Planner offers advanced customization with cultural tips, local experiences, and extended trip durations.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">How do I upgrade to Pro?</div>
+                <div class="answer">In the app, go to the Profile tab, tap Upgrade, and choose your subscription plan.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">Why are free features limited?</div>
+                <div class="answer">Free users can generate up to 3 itineraries per month, with a maximum of 5 days per trip. Subscribing to Pro unlocks longer trips, more itineraries, and additional features.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">How do I restore my Pro subscription?</div>
+                <div class="answer">Open the app, go to the <strong>Profile</strong> tab, tap <strong>Upgrade</strong>, and look for the <strong>"Restore Purchases"</strong> option. Ensure you are signed in with the same Apple ID used to purchase the subscription.</div>
+            </div>
+        </div>
+
+        <!-- CONTACT & FOOTER -->
+        <div class="contact-box">
+            <h2>Still need help?</h2>
+            <p>Please email us and specify which version of the app you are using.</p>
+            <a href="mailto:tripzy053@gmail.com" class="contact-email">tripzy053@gmail.com</a>
+        </div>
+
+        <footer>
+            <p>
+                <a href="https://mailme2005.github.io/tripzy/privacy.html">Privacy Policy</a> • 
+                <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA)</a>
+            </p>
+            <p>&copy; 2025 Tripzy. All rights reserved.</p>
+        </footer>
+    </div>
+
 </body>
 </html>
-
